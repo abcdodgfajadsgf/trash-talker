@@ -1,0 +1,27 @@
+local trash = {
+ 'seed',
+ 'my grandma shots better LOL ☠️',
+ 'kid got to sleep rq zzz 🛌',
+ 'son',
+ 'bro ur worse than a dog 💀',
+ 'bro shot like a grandma on a heart attack 💀',
+ 'get better',
+ 'even bacon aim better',
+ 'bozo AIM',
+ 'bro is fatherless',
+ 'yo my friend is fatherless aswell',
+ 'goofy ahh kid cant get better',
+ 'cope',
+ 'mald bozo',
+ 'mad kiddo get BETTER',
+}
+
+local UIS = game:GetService("UserInputService")
+local plr = game:GetService("Players").LocalPlayer
+local trigger = 'u' --set up there
+local talker = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+plr:GetMouse().KeyDown:connect(function(keycode)
+   if keycode == trigger then
+       talker:FireServer(trash[math.random(#trash)], "All")
+    end
+end)
